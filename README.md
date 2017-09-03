@@ -1,2 +1,0 @@
-nithinraok.github.io
-myWebsite
