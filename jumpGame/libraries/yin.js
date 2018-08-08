@@ -1,4 +1,3 @@
-"use strict";
 
 /*
   Copyright (C) 2003-2009 Paul Brossier <piem@aubio.org>
@@ -24,52 +23,48 @@
  * see http://recherche.ircam.fr/equipes/pcm/pub/people/cheveign.html
  */
 
-var DEFAULT_THRESHOLD = 0.10;
-var DEFAULT_SAMPLE_RATE = 44100;
-var DEFAULT_PROBABILITY_THRESHOLD = 0.1;
+const DEFAULT_THRESHOLD = 0.10;
+const DEFAULT_SAMPLE_RATE = 44100;
+const DEFAULT_PROBABILITY_THRESHOLD = 0.1;
 
-module.exports = function () {
-  var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+module.exports = function(config = {}) {
 
+  const threshold = config.threshold || DEFAULT_THRESHOLD;
+  const sampleRate = config.sampleRate || DEFAULT_SAMPLE_RATE;
+  const probabilityThreshold = config.probabilityThreshold || DEFAULT_PROBABILITY_THRESHOLD;
 
-  var threshold = config.threshold || DEFAULT_THRESHOLD;
-  var sampleRate = config.sampleRate || DEFAULT_SAMPLE_RATE;
-  var probabilityThreshold = config.probabilityThreshold || DEFAULT_PROBABILITY_THRESHOLD;
-
-  return function YINDetector(float32AudioBuffer) {
+  return function YINDetector (float32AudioBuffer) {
     "use strict";
 
     // Set buffer size to the highest power of two below the provided buffer's length.
-
-    var bufferSize = void 0;
-    for (bufferSize = 1; bufferSize < float32AudioBuffer.length; bufferSize *= 2) {}
+    let bufferSize;
+    for (bufferSize = 1; bufferSize < float32AudioBuffer.length; bufferSize *= 2);
     bufferSize /= 2;
-
+    
     // Set up the yinBuffer as described in step one of the YIN paper.
-    var yinBufferLength = bufferSize / 2;
-    var yinBuffer = new Float32Array(yinBufferLength);
+    const yinBufferLength = bufferSize / 2;
+    const yinBuffer = new Float32Array(yinBufferLength);
 
-    var probability = void 0,
-        tau = void 0;
+    let probability, tau;
 
     // Compute the difference function as described in step 2 of the YIN paper.
-    for (var t = 0; t < yinBufferLength; t++) {
+    for (let t = 0; t < yinBufferLength; t++) {
       yinBuffer[t] = 0;
     }
-    for (var _t = 1; _t < yinBufferLength; _t++) {
-      for (var i = 0; i < yinBufferLength; i++) {
-        var delta = float32AudioBuffer[i] - float32AudioBuffer[i + _t];
-        yinBuffer[_t] += delta * delta;
+    for (let t = 1; t < yinBufferLength; t++) {
+      for (let i = 0; i < yinBufferLength; i++) {
+        const delta = float32AudioBuffer[i] - float32AudioBuffer[i + t];
+        yinBuffer[t] += delta * delta;
       }
     }
 
     // Compute the cumulative mean normalized difference as described in step 3 of the paper.
     yinBuffer[0] = 1;
     yinBuffer[1] = 1;
-    var runningSum = 0;
-    for (var _t2 = 1; _t2 < yinBufferLength; _t2++) {
-      runningSum += yinBuffer[_t2];
-      yinBuffer[_t2] *= _t2 / runningSum;
+    let runningSum = 0;
+    for (let t = 1; t < yinBufferLength; t++) {
+      runningSum += yinBuffer[t];
+      yinBuffer[t] *= t / runningSum;
     }
 
     // Compute the absolute threshold as described in step 4 of the paper.
@@ -104,6 +99,7 @@ module.exports = function () {
       return null;
     }
 
+
     /**
      * Implements step 5 of the AUBIO_YIN paper. It refines the estimated tau
      * value using parabolic interpolation. This is needed to detect higher
@@ -111,9 +107,7 @@ module.exports = function () {
      * for more background
      * http://fedc.wiwi.hu-berlin.de/xplore/tutorials/xegbohtmlnode62.html
      */
-    var betterTau = void 0,
-        x0 = void 0,
-        x2 = void 0;
+    let betterTau, x0, x2;
     if (tau < 1) {
       x0 = tau;
     } else {
@@ -137,9 +131,9 @@ module.exports = function () {
         betterTau = x0;
       }
     } else {
-      var s0 = yinBuffer[x0];
-      var s1 = yinBuffer[tau];
-      var s2 = yinBuffer[x2];
+      const s0 = yinBuffer[x0];
+      const s1 = yinBuffer[tau];
+      const s2 = yinBuffer[x2];
       // fixed AUBIO implementation, thanks to Karl Helgason:
       // (2.0f * s1 - s2 - s0) was incorrectly multiplied with -1
       betterTau = tau + (s2 - s0) / (2 * (2 * s1 - s2 - s0));
