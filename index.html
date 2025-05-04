@@ -180,6 +180,50 @@
         /* Consider removing if unused */
     }
 
+    /* Media Query for Mobile Optimization */
+    @media (max-width: 600px) {
+      .main-container {
+        margin: 10px auto; /* Reduce top/bottom margin */
+        border-radius: 0; /* Remove rounded corners on mobile */
+      }
+
+      .content-padding {
+        padding: 15px; /* Reduce padding */
+      }
+
+      h1.name {
+        font-size: 28px; /* Adjust name size */
+      }
+
+      h2.heading {
+        font-size: 20px; /* Adjust heading size */
+      }
+
+      /* Target the specific table cells in the header */
+      /* Add classes 'header-bio' and 'header-image' to the respective <td> elements in the HTML */
+      .header-bio,
+      .header-image {
+        display: block; /* Stack the columns */
+        width: 100%;   /* Make columns full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
+
+      .header-image {
+        padding-top: 0; /* Remove top padding if stacking */
+      }
+
+      img.profile {
+         max-width: 150px; /* Limit profile image size */
+         margin-bottom: 15px; /* Add space below image */
+      }
+
+      .publication-list td,
+      .reviewer-list td,
+      .blog-list td {
+         padding-bottom: 15px; /* Slightly reduce space between list items */
+      }
+    }
+
   </style>
   <!-- <link rel="icon" type="image/png" href="images/seal_icon.png"> -->
   <title> Nithin Rao</title>
@@ -201,7 +245,7 @@
       <td>
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="67%" valign="top" class="content-padding">
+            <td width="67%" valign="top" class="content-padding header-bio">
                 <h1 class="name"> Nithin Rao Koluguri</h1>
               <p> As a Senior Research Scientist &#64; <a href="https://developer.nvidia.com/conversational-ai">  NVIDIA Conversational AI,</a> I work on developing speech recogntion, speaker recognition, verification and diarization systems. My research interests include speech signal processing, natural language processing and machine learning.</p> 
               <p>
@@ -218,7 +262,7 @@
                 </p>
               </div>
             </td>
-            <td width="33%" class="content-padding">
+            <td width="33%" class="content-padding header-image">
               <img class="profile" src="images/nithin_new.png" alt="Nithin Rao Koluguri profile picture">
             </td>
           </tr>
