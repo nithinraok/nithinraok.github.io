@@ -67,6 +67,7 @@
       font-weight: 700;
       margin-bottom: 10px; /* Spacing below name */
       color: #2c3e50; /* Darker heading color */
+      text-align: center; /* Center the name */
     }
 
     h2.heading {
@@ -77,7 +78,7 @@
       border-bottom: 1px solid #eee; /* Subtle separator */
       padding-bottom: 8px; /* Spacing below separator */
       margin-top: 15px; /* Space above heading */
-      margin-bottom: 15px; /* Space below heading */
+      margin-bottom: 5px; /* Reduced space below heading */
     }
 
     span.papertitle {
@@ -135,6 +136,9 @@
     }
 
     /* Academic Reviewer List */
+    .reviewer-list td.content-padding { /* Added this rule */
+        padding-top: 5px; /* Reduce top padding */
+    }
     .reviewer-list ul {
         list-style-type: disc; /* Standard bullets */
         margin-left: 20px; /* Indentation */
@@ -143,8 +147,17 @@
      .reviewer-list li {
         margin-bottom: 5px; /* Space between list items */
     }
+    .reviewer-list td > p:first-child { /* Added this rule */
+        margin-top: 0; /* Remove top margin */
+    }
 
     /* Blog List */
+    .blog-list td.content-padding { /* Added this rule */
+        padding-top: 0; /* Set top padding to 0 */
+    }
+    .blog-list td.content-padding > p:first-child { /* Added this rule */
+        margin-top: 0; /* Remove top margin from first paragraph */
+    }
     .blog-list td {
         padding-bottom: 10px; /* Space between blog links */
     }
@@ -188,9 +201,7 @@
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="67%" valign="top" class="content-padding">
-              <p align="center">
                 <h1 class="name"> Nithin Rao Koluguri</h1>
-              </p>
               <p> As a Senior Research Scientist &#64; <a href="https://developer.nvidia.com/conversational-ai">  NVIDIA Conversational AI,</a> I work on developing speech recogntion, speaker recognition, verification and diarization systems. My research interests include speech signal processing, natural language processing and machine learning.</p> 
               <p>
                 I received my masters degree from University of Southern California (USC) with a major in Electrical and Computer Engineering. During my masters I carried out research through <a href="https://sail.usc.edu/">Signal Analysis and Interpretation Laboratory (SAIL)</a> where I was advised by <a href="https://sail.usc.edu/people/shri.html">Prof. Shrikanth Narayanan</a>.
@@ -217,10 +228,10 @@
             <td width="100%" valign="middle" class="content-padding">
                 <h2 class="heading">Industry Experience</h2>
                 <p>
-                  Since June 2020, I've been fortunate to work at <a href="https://developer.nvidia.com/conversational-ai">NVIDIA</a> on some amazing projects in speech AI. I created the TitaNet architecture for speaker recognition, which has become a go-to model across the field and still averages around 1.5 million downloads per month on Hugging Face. I also built the first speaker diarization modules in <a href="https://github.com/NVIDIA/NeMo">NeMo</a>, using TitaNet embeddings and NME-SC clustering.
+                  Since June 2020, I've been fortunate to work at <a href="https://developer.nvidia.com/conversational-ai">NVIDIA</a> on some amazing projects in speech AI. I created the TitaNet architecture for speaker recognition, which has become a go-to model across the field and still averages around 1.5 million downloads per month on Hugging Face. I also co-built the first speaker diarization modules in <a href="https://github.com/NVIDIA/NeMo">NeMo</a>, using TitaNet embeddings and NME-SC clustering.
                 </p>
                 <p>
-                  Beyond speaker systems, I led the billion-parameter scaling for FastConformer ASR models, helping push the boundaries of what's possible in speech recognition. I've also been leading the development of the Parakeet model series — including <code>parakeet-tdt-0.6b-v2</code>, which currently holds the #1 spot on the <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">Hugging Face Open-ASR leaderboard</a>.
+                  Beyond speaker systems, I led the billion-parameter scaling for FastConformer ASR models, helping push the boundaries of what's possible in speech recognition. I've also been leading the development of the Parakeet model series — including <a href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2"><code>parakeet-tdt-0.6b-v2</code></a>, which currently holds the #1 spot on the <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">Hugging Face Open-ASR leaderboard</a>.
                 </p>
                 <p>
                   These days, my work is focused on building the next generation of SpeechLM models, pushing the limits of what speech and language models can achieve.
