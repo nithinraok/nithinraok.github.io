@@ -10,8 +10,8 @@
       font-family: 'Lato', Verdana, Helvetica, sans-serif;
       font-size: 16px; /* Increased base font size */
       line-height: 1.6; /* Improved line spacing */
-      color: #333; /* Default text color */
-      background-color: #f8f9fa; /* Subtle background color */
+      color: #eeeeee; /* Light Grey Text */
+      background-color: #222222; /* Dark Grey Background */
       margin: 0;
       padding: 0;
     }
@@ -23,6 +23,7 @@
     td, th, tr, p {
       font-family: inherit; /* Inherit from body */
       font-size: inherit; /* Inherit from body */
+      color: inherit; /* Inherit text color from body */
     }
 
     /* Main container table */
@@ -30,8 +31,8 @@
       width: 100%; /* Keep width 100% for responsiveness */
       max-width: 960px; /* Set a max width */
       margin: 20px auto; /* Center the table */
-      background-color: #ffffff; /* White background for content */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+      background-color: #333333; /* Slightly Lighter Dark Background */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Adjusted shadow for dark theme */
       border-radius: 5px; /* Slightly rounded corners */
     }
 
@@ -43,14 +44,14 @@
 
     /* Links */
     a {
-      color: #1a0dab; /* Standard link blue */
+      color: #76b900; /* NVIDIA Green */
       text-decoration: none;
       transition: color 0.2s ease-in-out; /* Smooth transition */
     }
 
     a:focus,
     a:hover {
-      color: #d9534f; /* A contrasting hover color (Bootstrap danger red) */
+      color: #5a8c00; /* Darker NVIDIA Green */
       text-decoration: underline; /* Underline on hover */
     }
 
@@ -66,7 +67,7 @@
       font-size: 36px; /* Slightly larger name */
       font-weight: 700;
       margin-bottom: 10px; /* Spacing below name */
-      color: #2c3e50; /* Darker heading color */
+      color: #ffffff; /* White */
       text-align: center; /* Center the name */
     }
 
@@ -74,8 +75,8 @@
       font-family: 'Lato', Verdana, Helvetica, sans-serif;
       font-size: 24px; /* Slightly adjusted heading size */
       font-weight: 700;
-      color: #34495e; /* Modern heading color (dark grayish blue) */
-      border-bottom: 1px solid #eee; /* Subtle separator */
+      color: #ffffff; /* White */
+      border-bottom: 1px solid #76b900; /* NVIDIA Green separator */
       padding-bottom: 8px; /* Spacing below separator */
       margin-top: 15px; /* Space above heading */
       margin-bottom: 5px; /* Reduced space below heading */
@@ -85,7 +86,7 @@
       font-family: inherit;
       font-size: 1.1em; /* Make paper titles stand out more */
       font-weight: 700;
-      color: #333; /* Darker title color */
+      color: #ffffff; /* White */
     }
 
     /* Profile Image */
@@ -95,7 +96,7 @@
       height: auto; /* Maintain aspect ratio */
       display: block; /* Center image if container is sized */
       margin: 0 auto; /* Center image */
-      border: 3px solid #eee; /* Subtle border */
+      border: 3px solid #555555; /* Mid-Grey border */
     }
 
     /* Email/Links section */
@@ -117,7 +118,7 @@
         line-height: 1.5; /* Slightly increased line height for authors/conference */
     }
     .publication-list em { /* Style the journal/conference name */
-        color: #666; /* Slightly lighter color */
+        color: #bbbbbb; /* Lighter Grey */
         font-size: 0.95em; /* Keep size relative */
         display: inline; /* Ensure it stays on the same line */
         margin-top: 3px; /* Space above conference name */
@@ -125,14 +126,14 @@
     .publication-list a[href^="https://github"],
     .publication-list a[href^="http://spire"] { /* Style project links */
         font-weight: bold;
-        color: #5cb85c; /* Green color for project links */
+        color: #76b900; /* NVIDIA Green */
         font-size: 0.95em; /* Match conference size */
         display: inline-block; /* Allow margin */
         margin-top: 5px; /* Space above project link */
     }
      .publication-list a[href^="https://github"]:hover,
      .publication-list a[href^="http://spire"]:hover {
-        color: #4cae4c;
+        color: #5a8c00; /* Darker NVIDIA Green */
     }
 
     /* Academic Reviewer List */
@@ -169,7 +170,7 @@
     /* Footer */
     .footnote {
       font-size: 0.9em; /* Smaller footnote */
-      color: #777; /* Grey color */
+      color: #aaaaaa; /* Lighter Grey */
       text-align: right;
       margin-top: 20px;
     }
