@@ -92,7 +92,7 @@
     /* Profile Image */
     img.profile {
       border-radius: 50%;
-      max-width: 100%;
+      max-width: 200px; /* Increase profile image size */
       height: auto; /* Maintain aspect ratio */
       display: block; /* Center image if container is sized */
       margin: 0 auto; /* Center image */
@@ -209,11 +209,14 @@
       }
 
       .header-image {
-        padding-top: 0; /* Remove top padding if stacking */
+        display: block; /* Stack the columns */
+        width: 100%;   /* Make columns full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+        padding-bottom: 15px; /* Add space below image when stacked */
       }
 
       img.profile {
-         max-width: 150px; /* Limit profile image size */
+         max-width: 200px; /* Increase profile image size */
          margin-bottom: 15px; /* Add space below image */
       }
 
@@ -245,6 +248,9 @@
       <td>
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
+            <td width="33%" class="content-padding header-image">
+              <img class="profile" src="images/nithin_new.png" alt="Nithin Rao Koluguri profile picture">
+            </td>
             <td width="67%" valign="top" class="content-padding header-bio">
                 <h1 class="name"> Nithin Rao Koluguri</h1>
               <p> As a Senior Research Scientist &#64; <a href="https://developer.nvidia.com/conversational-ai">  NVIDIA Conversational AI,</a> I work on developing speech recogntion, speaker recognition, verification and diarization systems. My research interests include speech signal processing, natural language processing and machine learning.</p> 
@@ -261,9 +267,6 @@
                   <a href="https://medium.com/@nithinraok_">Blog</a>
                 </p>
               </div>
-            </td>
-            <td width="33%" class="content-padding header-image">
-              <img class="profile" src="images/nithin_new.png" alt="Nithin Rao Koluguri profile picture">
             </td>
           </tr>
         </table>
