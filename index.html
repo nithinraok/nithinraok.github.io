@@ -1,83 +1,171 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 
 <head>
-  <meta name=viewport content="width=800">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
   <style type="text/css">
+    /* General Styles */
+    body {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 16px; /* Increased base font size */
+      line-height: 1.6; /* Improved line spacing */
+      color: #333; /* Default text color */
+      background-color: #f8f9fa; /* Subtle background color */
+      margin: 0;
+      padding: 0;
+    }
 
+    table {
+      border-collapse: collapse; /* Remove default table spacing */
+    }
+
+    td, th, tr, p {
+      font-family: inherit; /* Inherit from body */
+      font-size: inherit; /* Inherit from body */
+    }
+
+    /* Main container table */
+    .main-container {
+      width: 100%; /* Keep width 100% for responsiveness */
+      max-width: 960px; /* Set a max width */
+      margin: 20px auto; /* Center the table */
+      background-color: #ffffff; /* White background for content */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+      border-radius: 5px; /* Slightly rounded corners */
+    }
+
+    /* Content padding */
+    .content-padding {
+      padding: 25px; /* Consistent padding */
+    }
+
+
+    /* Links */
     a {
-      color: #1772d0;
+      color: #1a0dab; /* Standard link blue */
       text-decoration: none;
+      transition: color 0.2s ease-in-out; /* Smooth transition */
     }
 
     a:focus,
     a:hover {
-      color: #f09228;
-      text-decoration: none;
+      color: #d9534f; /* A contrasting hover color (Bootstrap danger red) */
+      text-decoration: underline; /* Underline on hover */
     }
 
-    body,
-    td,
-    th,
-    tr,
-    p,
-    a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px
-    }
-
+    /* Typography */
     strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 700; /* Ensure strong is bold */
     }
 
-    heading {
+    h1.name {
       font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 22px;
+      font-size: 36px; /* Slightly larger name */
+      font-weight: 700;
+      margin-bottom: 10px; /* Spacing below name */
+      color: #2c3e50; /* Darker heading color */
     }
 
-    papertitle {
+    h2.heading {
       font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px;
-      font-weight: 700
+      font-size: 24px; /* Slightly adjusted heading size */
+      font-weight: 700;
+      color: #34495e; /* Modern heading color (dark grayish blue) */
+      border-bottom: 1px solid #eee; /* Subtle separator */
+      padding-bottom: 8px; /* Spacing below separator */
+      margin-top: 15px; /* Space above heading */
+      margin-bottom: 15px; /* Space below heading */
     }
 
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 32px;
+    span.papertitle {
+      font-family: inherit;
+      font-size: 1.1em; /* Make paper titles stand out more */
+      font-weight: 700;
+      color: #333; /* Darker title color */
     }
 
-    .profile {
+    /* Profile Image */
+    img.profile {
       border-radius: 50%;
-    }
-
-    .one {
-      width: 160px;
-      height: 160px;
       max-width: 100%;
-      max-height: 100%;
-      position: relative;
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Center image if container is sized */
+      margin: 0 auto; /* Center image */
+      border: 3px solid #eee; /* Subtle border */
     }
 
-    .two {
-      width: 160px;
-      height: 160px;
-      position: absolute;
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
+    /* Email/Links section */
+    .contact-links p {
+       text-align: center;
+       margin-top: 15px;
     }
 
-    .fade {
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
+    /* Publication List */
+    .publication-list td {
+        padding-bottom: 25px; /* Increased space between publications */
+        vertical-align: top;
+    }
+    .publication-list span.papertitle {
+        display: block; /* Ensure title takes its own line */
+        margin-bottom: 0px; /* Remove space below title */
+    }
+    .publication-list br {
+        line-height: 1.5; /* Slightly increased line height for authors/conference */
+    }
+    .publication-list em { /* Style the journal/conference name */
+        color: #666; /* Slightly lighter color */
+        font-size: 0.95em; /* Keep size relative */
+        display: inline; /* Ensure it stays on the same line */
+        margin-top: 3px; /* Space above conference name */
+    }
+    .publication-list a[href^="https://github"],
+    .publication-list a[href^="http://spire"] { /* Style project links */
+        font-weight: bold;
+        color: #5cb85c; /* Green color for project links */
+        font-size: 0.95em; /* Match conference size */
+        display: inline-block; /* Allow margin */
+        margin-top: 5px; /* Space above project link */
+    }
+     .publication-list a[href^="https://github"]:hover,
+     .publication-list a[href^="http://spire"]:hover {
+        color: #4cae4c;
     }
 
-    span.highlight {
-      background-color: #ffffd0;
+    /* Academic Reviewer List */
+    .reviewer-list ul {
+        list-style-type: disc; /* Standard bullets */
+        margin-left: 20px; /* Indentation */
+        padding-left: 10px;
     }
+     .reviewer-list li {
+        margin-bottom: 5px; /* Space between list items */
+    }
+
+    /* Blog List */
+    .blog-list td {
+        padding-bottom: 10px; /* Space between blog links */
+    }
+    .blog-list .papertitle { /* Reuse papertitle style */
+        font-size: 1.05em;
+    }
+
+
+    /* Footer */
+    .footnote {
+      font-size: 0.9em; /* Smaller footnote */
+      color: #777; /* Grey color */
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    /* Remove legacy image transition styles if not needed */
+    .one, .two, .fade, span.highlight {
+        /* Consider removing if unused */
+    }
+
   </style>
   <!-- <link rel="icon" type="image/png" href="images/seal_icon.png"> -->
   <title> Nithin Rao</title>
@@ -89,81 +177,83 @@
   gtag('js', new Date());
   gtag('config', 'UA-114832734-1');
 </script>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <meta charset="UTF-8">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+  <table class="main-container" width="800" border="0" align="center" cellspacing="0" cellpadding="0">
     <tr>
       <td>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="67%" valign="middle">
+            <td width="67%" valign="top" class="content-padding">
               <p align="center">
-                <name> Nithin Rao Koluguri</name>
+                <h1 class="name"> Nithin Rao Koluguri</h1>
               </p>
               <p> As a Senior Research Scientist &#64; <a href="https://developer.nvidia.com/conversational-ai">  NVIDIA Conversational AI,</a> I work on developing speech recogntion, speaker recognition, verification and diarization systems. My research interests include speech signal processing, natural language processing and machine learning.</p> 
               <p>
                 I received my masters degree from University of Southern California (USC) with a major in Electrical and Computer Engineering. During my masters I carried out research through <a href="https://sail.usc.edu/">Signal Analysis and Interpretation Laboratory (SAIL)</a> where I was advised by <a href="https://sail.usc.edu/people/shri.html">Prof. Shrikanth Narayanan</a>.
 	      </p>
-              <p align=center>
-                <a href="mailto:nithinrao.koluguri@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="https://drive.google.com/file/d/1SivSTm7iDPuI51_hierJan0wdScMmnzk/view">CV</a> &nbsp/&nbsp
-                <a href="https://www.github.com/nithinraok">Github</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/nithinraok/"> LinkedIn </a> &nbsp/&nbsp
-                <a href="https://scholar.google.co.in/citations?user=YPtcUTUAAAAJ&hl=en"> Google Scholar  </a> &nbsp/&nbsp
-                <a href="https://medium.com/@nithinraok_">Blog</a>
-              </p>
+              <div class="contact-links">
+                <p>
+                  <a href="mailto:nithinrao.koluguri@gmail.com">Email</a> &nbsp/&nbsp
+                  <a href="https://drive.google.com/file/d/1SivSTm7iDPuI51_hierJan0wdScMmnzk/view">CV</a> &nbsp/&nbsp
+                  <a href="https://www.github.com/nithinraok">Github</a> &nbsp/&nbsp
+                  <a href="https://www.linkedin.com/in/nithinraok/"> LinkedIn </a> &nbsp/&nbsp
+                  <a href="https://scholar.google.co.in/citations?user=YPtcUTUAAAAJ&hl=en"> Google Scholar  </a> &nbsp/&nbsp
+                  <a href="https://medium.com/@nithinraok_">Blog</a>
+                </p>
+              </div>
             </td>
-            <td width="33%">
-              <img class="profile" src="images/nithin_new.png">
+            <td width="33%" class="content-padding">
+              <img class="profile" src="images/nithin_new.png" alt="Nithin Rao Koluguri profile picture">
             </td>
           </tr>
         </table>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="100%" valign="middle">
-                <heading style="color:rgb(244, 189, 184);" >  Prior Work Experience </heading>
-              <p>
-                <papertitle> Applied Machine Learning Intern at <a href="https://www.bose.com/en_us/index.html" > Bose CE Applied Research Group</a> </papertitle>
-                <!-- <br> -->
-                <br>
-                <ul>
-                  <li>Developed and Deployed NLP & Computer Vision related ML system on Google pixel phone and Bose wearables</li>
-                </ul>
-                
-              </p>
-              
-              <p>
-                <papertitle> Research Assistant at <a href="https://spire.ee.iisc.ac.in/" > SPIRE LAB, IISc Bangalore </a> (Advised by: <a href="http://www.ee.iisc.ac.in/new/people/faculty/prasantg/">Prof. Prasanta Kumar Ghosh</a>) </papertitle>
-                <!-- <br> -->
-                <br>
-                <ul>
-                  <li>Built a speech classifier to detect Amyotrophic Lateral Sclerosis (ALS) and Parkinsons (PD) diseases based on voice as bio-marker</li>
-                  <li>Developed an unsupervised system for robust bird sound detection using enhanced Multiple Window Savitzky-Golay (MWSG) spectrogram. </li>
-                </ul>
-              </p>
-            
-              <p>
-                <papertitle> Software Developer at <a href="https://spire.ee.iisc.ac.in/" > Robert Bosch Bangalore </a> </papertitle>
-                <!-- <br> -->
-                <br>
-                <ul>
-                  <li>Customer and Production diagnosis in Telematics Projects, where designed new features for Daimler customer.</li>
-                  <li>Text to speech (TTS) outputs for various car multimedia features like navigation, SMS readout and hands free control and tested the output using TTFIS tool</li>
-                </ul>
-              </p>
-
+            <td width="100%" valign="middle" class="content-padding">
+                <h2 class="heading">Industry Experience</h2>
+                <p>
+                  Since June 2020, I've been fortunate to work at <a href="https://developer.nvidia.com/conversational-ai">NVIDIA</a> on some amazing projects in speech AI. I created the TitaNet architecture for speaker recognition, which has become a go-to model across the field and still averages around 1.5 million downloads per month on Hugging Face. I also built the first speaker diarization modules in <a href="https://github.com/NVIDIA/NeMo">NeMo</a>, using TitaNet embeddings and NME-SC clustering.
+                </p>
+                <p>
+                  Beyond speaker systems, I led the billion-parameter scaling for FastConformer ASR models, helping push the boundaries of what's possible in speech recognition. I've also been leading the development of the Parakeet model series — including <code>parakeet-tdt-0.6b-v2</code>, which currently holds the #1 spot on the <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">Hugging Face Open-ASR leaderboard</a>.
+                </p>
+                <p>
+                  These days, my work is focused on building the next generation of SpeechLM models, pushing the limits of what speech and language models can achieve.
+                </p>
+                 <!-- Previous Internship/Bosch text removed as per user replacement request -->
+                 <p>
+                   Prior to NVIDIA, I gained valuable experience as an Applied Machine Learning Intern at the <a href="https://www.bose.com/en_us/index.html" > Bose CE Applied Research Group</a> during the summer of 2019. There, I developed and deployed NLP and Computer Vision ML systems on mobile devices (Google Pixel) and Bose wearables.
+                 </p>
+                 <p>
+                   My early industry experience includes working as a Software Developer at <a href="https://www.robertbosch.com/">Robert Bosch Bangalore</a> (July 2016 - January 2018). In this role, I contributed to Telematics Projects, focusing on customer and production diagnosis and designing features for Daimler. I also worked on integrating Text-to-Speech (TTS) functionalities for various in-car multimedia features like navigation and SMS readout.
+                 </p>
             </td>
           </tr>
         </table>
         
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="100%" valign="middle">
-              <heading style="color:rgb(244, 189, 184);" >Research</heading>
+            <td width="100%" valign="middle" class="content-padding">
+              <h2 class="heading">Academic Experience</h2>
+              <p>
+                During my Master's degree at the University of Southern California (USC), I worked as a Graduate Research Assistant at the <a href="https://sail.usc.edu/" >Signal Analysis and Interpretation Laboratory (SAIL)</a> from September 2018 to December 2020. Under the guidance of <a href="https://sail.usc.edu/people/shri.html">Prof. Shrikanth Narayanan</a> and <a href="https://viterbi.usc.edu/directory/faculty/Georgiou/Panayiotis">Prof. Panayiotis Georgiou</a>, my research explored innovative approaches to speaker diarization using prototypical networks, leveraging few-shot meta-learning techniques. I also contributed to improving Automatic Speech Recognition (ASR) by generating n-best path lists from speech recordings under various noise conditions using Kaldi, aiming to reduce ASR error rates.
+              </p>
+              <p>
+                Before my Master's studies, I served as a Research Assistant at the <a href="https://spire.ee.iisc.ac.in/" >SPIRE LAB</a> at the Indian Institute of Science (IISc), Bangalore, from January to July 2018. Advised by <a href="http://www.ee.iisc.ac.in/new/people/faculty/prasantg/">Prof. Prasanta Kumar Ghosh</a>, my work focused on leveraging voice as a biomarker. I built speech classifiers to aid in the detection of Amyotrophic Lateral Sclerosis (ALS) and Parkinson's (PD) diseases and analyzed the effectiveness of different speech stimuli and recording devices for this diagnostic goal.
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="100%" valign="middle" class="content-padding">
+              <h2 class="heading">Research</h2>
               <p>
 		I am interested in understanding signal level properties of audio,speech and Image. My research experiences thus far delve in natural language processing and applying machine learning algorithms on speech & image.
 	      </p>
@@ -172,198 +262,216 @@
         </table>
 
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <table width="100%" align="center" border="0" cellspacing="0" class="publication-list">
+            <!-- Sortformer -->
+            <tr>
+                <td valign="top" class="content-padding">
+                    <a href="https://arxiv.org/abs/2409.06656">
+                    <span class="papertitle">Sortformer: Seamless integration of speaker diarization and ASR by bridging timestamps and tokens</span>
+                    </a>
+                    Taejin Park, Ivan Medennikov, Kunal Dhawan, Weiqing Wang, He Huang, <strong>Nithin Rao Koluguri</strong>, Krishna C Puvvada, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>Submitted to ICML 2025</em>
+                    <!-- <a href="LINK_NEEDED">project page</a> -->
+                </td>
+            </tr>
+            <!-- NEST -->
+            <tr>
+                <td valign="top" class="content-padding">
+                    <a href="https://arxiv.org/abs/2408.13106">
+                    <span class="papertitle">NEST: Self-supervised Fast Conformer as All-purpose Seasoning to Speech Processing Tasks</span>
+                    </a>
+                    He Huang, Taejin Park, Kunal Dhawan, Ivan Medennikov, Krishna C Puvvada, <strong>Nithin Rao Koluguri</strong>, Weiqing Wang, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025</em>
+                    <!-- <a href="LINK_NEEDED">project page</a> -->
+                </td>
+            </tr>
+            <!-- META-CAT -->
+            <tr>
+                <td valign="top" class="content-padding">
+                    <a href="https://arxiv.org/abs/2409.12352">
+                    <span class="papertitle">META-CAT: Speaker-Informed Speech Embeddings via Meta Information Concatenation for Multi-talker ASR</span>
+                    </a>
+                    Jinhan Wang, Weiqing Wang, Kunal Dhawan, Taejin Park, Myungjong Kim, Ivan Medennikov, He Huang, <strong>Nithin Koluguri</strong>, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025</em>
+                    <!-- <a href="LINK_NEEDED">project page</a> -->
+                </td>
+            </tr>
+             <!-- Longer is Not Stronger -->
+            <tr>
+                <td valign="top" class="content-padding">
+                    <a href="https://arxiv.org/abs/2407.14672">
+                    <span class="papertitle">Longer is (Not Necessarily) Stronger: Punctuated Long-Sequence Training for Enhanced Speech Recognition and Translation</span>
+                    </a>
+                    <strong>Nithin Rao Koluguri</strong>, Travis Bartley, Hainan Xu, Oleksii Hrinchuk, Jagadeesh Balam, Boris Ginsburg, Georg Kucsko
+                    <br><em>IEEE Spoken Language Technology Workshop (SLT), 2024</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+                </td>
+            </tr>
+            <!-- Bestow -->
+            <tr>
+                <td valign="top" class="content-padding">
+                    <a href="https://arxiv.org/abs/2407.15743">
+                    <span class="papertitle">Bestow: Efficient and streamable speech language model with the best of two worlds in GPT and T5</span>
+                    </a>
+                    Zhehuai Chen, He Huang, Oleksii Hrinchuk, Krishna C Puvvada, <strong>Nithin Rao Koluguri</strong>, Piotr Żelasko, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>IEEE Spoken Language Technology Workshop (SLT), 2024</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+                </td>
+            </tr>
+            <!-- Less is More -->
+            <tr>
+                <td valign="top" class="content-padding">
+                    <a href="https://arxiv.org/abs/2404.06901">
+                    <span class="papertitle">Less is More: Accurate Speech Recognition & Translation without Web-Scale Data</span>
+                    </a>
+                    Krishna C. Puvvada, Piotr Zelasko, He Huang, Oleksii Hrinchuk, <strong>Nithin Rao Koluguri</strong>, Kunal Dhawan, Somshubra Majumdar, Elena Rastorgueva, Zhehuai Chen, Vitaly Lavrukhin, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>International Speech Communication Association (Interspeech), 2024</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+                </td>
+            </tr>
+            <!-- Codec-ASR -->
+            <tr>
+                <td valign="top" class="content-padding">
+                    <a href="https://arxiv.org/abs/2407.12711">
+                    <span class="papertitle">Codec-ASR: Training Performant Automatic Speech Recognition Systems with Discrete Speech Representations</span>
+                    </a>
+                    Kunal Dhawan, <strong>Nithin Rao Koluguri</strong>, Ante Jukic, Ryan Langman, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>International Speech Communication Association (Interspeech), 2024</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+                </td>
+            </tr>
             <!-- Krishna C Puvvada, \textbf{Nithin Rao Koluguri}, Kunal Dhawan, Jagadeesh Balam, Boris Ginsburg ``Discrete Audio Representation as an Alternative to Mel-Spectrograms for Speaker and Speech Recognition" \textit{IEEE ICASSP 2024}.Paper: https://arxiv.org/pdf/2309.10922 -->
             <tr>
-                <td valign="top" width="75%">
+                <td valign="top" class="content-padding">
                     <a href="https://arxiv.org/pdf/2309.10922">
-                    <papertitle>Discrete Audio Representation as an Alternative to Mel-Spectrograms for Speaker and Speech Recognition</papertitle>
+                    <span class="papertitle">Discrete Audio Representation as an Alternative to Mel-Spectrograms for Speaker and Speech Recognition</span>
                     </a>
-                    <br>Krishna C Puvvada, <strong>Nithin Rao Koluguri</strong>, Kunal Dhawan, Jagadeesh Balam, Boris Ginsburg
-                    <br>
-                    <br>
-                    <em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024</em>
-                    <br>
-                    <a href="https://github.com/NVIDIA/NeMo">project page</a>
-                    <p></p>
-                    <p> We evaluate various discrete audio representations that can be used as an alternative to mel-spectrograms for speech and speaker recognition. </p>
+                    Krishna C Puvvada, <strong>Nithin Rao Koluguri</strong>, Kunal Dhawan, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
                 </td>
             </tr>
 
             <!-- \textbf{Nithin Rao Koluguri}, Samuel Kriman, Georgy Zelenfroind, Somshubra Majumdar, Dima Rekesh, Vahid Noroozi, Jagadeesh Balam, Boris Ginsburg ``Investigating End-to-End ASR Architectures for Long Form Audio Transcription" \textit{IEEE ICASSP 2024}.Paper: https://arxiv.org/pdf/2309.09950 -->
             <tr>
-                <td valign="top" width="75%">
+                <td valign="top" class="content-padding">
                     <a href="https://arxiv.org/pdf/2309.09950">
-                    <papertitle>Investigating End-to-End ASR Architectures for Long Form Audio Transcription</papertitle>
+                    <span class="papertitle">Investigating End-to-End ASR Architectures for Long Form Audio Transcription</span>
                     </a>
-                    <br><strong>Nithin Rao Koluguri</strong>, Samuel Kriman, Georgy Zelenfroind, Somshubra Majumdar, Dima Rekesh, Vahid Noroozi, Jagadeesh Balam, Boris Ginsburg
-                    <br>
-                    <br>
-                    <em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024</em>
-                    <br>
-                    <a href="https://github.com/NVIDIA/NeMo">project page</a>
-                    <p></p>
-                    <p> We investigate end-to-end ASR architectures for long form audio transcription, that can do inference in one single pass. </p>
+                    <strong>Nithin Rao Koluguri</strong>, Samuel Kriman, Georgy Zelenfroind, Somshubra Majumdar, Dima Rekesh, Vahid Noroozi, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
                 </td>
             </tr>
 
             <!-- Tae Jin Park, Kunal Dhawan, \textbf{Nithin Koluguri}, Jagadeesh Balam ``Enhancing Speaker Diarization with Large Language Models: A Contextual Beam Search Approach" \textit{IEEE ICASSP 2024} Paper:https://arxiv.org/pdf/2309.05248  -->
             <tr>
-                <td valign="top" width="75%">
+                <td valign="top" class="content-padding">
                     <a href="https://arxiv.org/pdf/2309.05248">
-                    <papertitle>Enhancing Speaker Diarization with Large Language Models: A Contextual Beam Search Approach</papertitle>
+                    <span class="papertitle">Enhancing Speaker Diarization with Large Language Models: A Contextual Beam Search Approach</span>
                     </a>
-                    <br>Tae Jin Park, Kunal Dhawan, <strong>Nithin Koluguri</strong>, Jagadeesh Balam
-                    <br>
-                    <br>
-                    <em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024</em>
-                    <br>
-                    <a href="https://github.com/NVIDIA/NeMo">project page</a>
-                    <p></p>
-                    <p> We propose a novel contextual beam search approach for speaker diarization that leverages large language models to improve speaker diarization performance. </p>
+                    Tae Jin Park, Kunal Dhawan, <strong>Nithin Koluguri</strong>, Jagadeesh Balam
+                    <br><em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
                 </td>
             </tr>
 
             <!-- Dima Rekesh,\textbf{ Nithin Rao Koluguri}, Samuel Kriman, Somshubra Majumdar, Vahid Noroozi, He Huang, Oleksii Hrinchuk, Krishna Puvvada, Ankur Kumar, Jagadeesh Balam, Boris Ginsburg ``Fast conformer with linearly scalable attention for efficient speech recognition" \textit{IEEE ASRU 2023}. Paper: https://ieeexplore.ieee.org/iel7/10388490/10389614/10389701.pdf  -->
             <tr>
-                <td valign="top" width="75%">
+                <td valign="top" class="content-padding">
                     <a href="https://ieeexplore.ieee.org/iel7/10388490/10389614/10389701.pdf">
-                    <papertitle>Fast conformer with linearly scalable attention for efficient speech recognition</papertitle>
+                    <span class="papertitle">Fast conformer with linearly scalable attention for efficient speech recognition</span>
                     </a>
-                    <br>Dima Rekesh, <strong>Nithin Rao Koluguri</strong>, Samuel Kriman, Somshubra Majumdar, Vahid Noroozi, He Huang, Oleksii Hrinchuk, Krishna Puvvada, Ankur Kumar, Jagadeesh Balam, Boris Ginsburg
-                    <br>
-                    <br>
-                    <em>IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), 2023</em>
-                    <br>
-                    <a href="https://github.com/NVIDIA/NeMo">project page</a>
-                    <p></p>
-                    <p> We propose a novel attention mechanism for Conformer architecture that is linearly scalable with respect to the input sequence length. </p>
+                    Dima Rekesh, <strong>Nithin Rao Koluguri</strong>, Samuel Kriman, Somshubra Majumdar, Vahid Noroozi, He Huang, Oleksii Hrinchuk, Krishna Puvvada, Ankur Kumar, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), 2023</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
                 </td>
             </tr>
         <!-- Sanchit and Hugging Face Team and Nvidia NeMo Team and SpeechBrain Team Vaibhav Srivastav and Somshubra Majumdar, and \textbf{Nithin Koluguri }and Adel. ``Open Automatic Speech Recognition Leaderboard" Link:https://huggingface.co/spaces/hf-audio/open_asr_leaderboard  -->
             <tr>
-                <td valign="top" width="75%">
+                <td valign="top" class="content-padding">
                 <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">
-                    <papertitle>Open Automatic Speech Recognition Leaderboard</papertitle>
+                    <span class="papertitle">Open Automatic Speech Recognition Leaderboard</span>
                 </a>
-                <br>
                 Sanchit, Hugging Face Team, Nvidia NeMo Team, SpeechBrain Team, Vaibhav Srivastav, Somshubra Majumdar, <strong>Nithin Koluguri</strong>, Adel
-                <br>
-                <a href="https://github.com/huggingface/open_asr_leaderboard">project page</a>
-                <p></p>
-                <p> We present the Open Automatic Speech Recognition Leaderboard, a platform for benchmarking and comparing ASR models. </p>
+                &nbsp;/&nbsp;<a href="https://github.com/huggingface/open_asr_leaderboard">project page</a>
                 </td>
             </tr>
 
           <!-- For Fei Jia, \textbf{Nithin Rao Koluguri}, Jagadeesh Balam, and Boris Ginsburg. ``A Compact End-to-End Model with Local and Global Context for Spoken Language Identification." \textit{IEEE Interspeech 2023}. Paper:https://arxiv.org/pdf/2210.15781. Matter:  AmberNet, a compact end-to-end neural network for Spoken Language Identification. AmberNet consists of 1D depth-wise separable convolutions and Squeeze-and-Excitation layers with global context, followed by statistics pooling and linear layers. -->
             <tr>
-                <td valign="top" width="75%">
+                <td valign="top" class="content-padding">
                     <a href="https://arxiv.org/pdf/2210.15781">
-                    <papertitle>A Compact End-to-End Model with Local and Global Context for Spoken Language Identification</papertitle>
+                    <span class="papertitle">A Compact End-to-End Model with Local and Global Context for Spoken Language Identification</span>
                     </a>
-                    <br>Fei Jia, <strong>Nithin Rao Koluguri</strong>, Jagadeesh Balam, Boris Ginsburg
-                    <br>
-                    <br>
-                    <em>International Speech Communication Association (Interspeech), 2023</em>
-                    <br>
-                    <a href="https://github.com/NVIDIA/NeMo">project page</a>
-                    <p></p>
-                    <p> AmberNet, a compact end-to-end neural network for Spoken Language Identification. AmberNet consists of 1D depth-wise separable convolutions and Squeeze-and-Excitation layers with global context, followed by statistics pooling and linear layers. </p>"
-                </td>
+                    Fei Jia, <strong>Nithin Rao Koluguri</strong>, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>International Speech Communication Association (Interspeech), 2023</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+                 </td>
             </tr>
             <!-- For Tae Jin Park and He Huang and Coleman Hooper and \textbf{Nithin Rao Koluguri} and Kunal Dhawan and Ante Jukić and Jagadeesh Balam and Boris Ginsburg ``Property-Aware Multi-Speaker Data Simulation: A Probabilistic Modelling Technique for Synthetic Data Generation" \textit{IEEE Interspeech 2023}. Paper:https://arxiv.org/pdf/2310.12371 -->
             <tr>
-                <td valign="top" width="75%">
+                <td valign="top" class="content-padding">
                     <a href="https://arxiv.org/pdf/2310.12371">
-                    <papertitle>Property-Aware Multi-Speaker Data Simulation: A Probabilistic Modelling Technique for Synthetic Data Generation</papertitle>
+                    <span class="papertitle">Property-Aware Multi-Speaker Data Simulation: A Probabilistic Modelling Technique for Synthetic Data Generation</span>
                     </a>
-                    <br>Tae Jin Park, He Huang, Coleman Hooper, <strong>Nithin Rao Koluguri</strong>, Kunal Dhawan, Ante Jukić, Jagadeesh Balam, Boris Ginsburg
-                    <br>
-                    <br>
-                    <em>International Speech Communication Association (Interspeech), 2023</em>
-                    <br>
-                    <a href="https://github.com/NVIDIA/NeMo">project page</a>
-                    <p></p>
-                    <p> We introduce a sophisticated multi-speaker speech data simulator, specifically engineered to generate multi-speaker speech recordings.</p>
-                </td>
+                    Tae Jin Park, He Huang, Coleman Hooper, <strong>Nithin Rao Koluguri</strong>, Kunal Dhawan, Ante Jukić, Jagadeesh Balam, Boris Ginsburg
+                    <br><em>International Speech Communication Association (Interspeech), 2023</em>
+                    &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+                 </td>
             </tr>
-                              <!-- writing the tr code for paper  Tae Jin Park and He Huang and Ante Jukić and Kunal Dhawan and Krishna C. Puvvada and \textbf{Nithin Rao Koluguri} and Nikolay Karpov and Aleksandr Laptev and Jagadeesh Balam and Boris Ginsburg ``The CHiME-7 Challenge: System Description and Performance of NeMo Team’s DASR System" \textit{IEEE Interspeech 2023}. -->
+                              <!-- writing the tr code for paper  Tae Jin Park and He Huang and Ante Jukić and Kunal Dhawan and Krishna C. Puvvada and \textbf{Nithin Rao Koluguri} and Nikolay Karpov and Aleksandr Laptev and Jagadeesh Balam and Boris Ginsburg ``The CHiME-7 Challenge: System Description and Performance of NeMo Team's DASR System" \textit{IEEE Interspeech 2023}. -->
           <tr>
-            <td valign="top" width="75%">
+            <td valign="top" class="content-padding">
               <a href="https://arxiv.org/pdf/2310.12378">
-                <papertitle>The CHiME-7 Challenge: System Description and Performance of NeMo Team's DASR System </papertitle>    
+                <span class="papertitle">The CHiME-7 Challenge: System Description and Performance of NeMo Team's DASR System </span>
                 </a>
-                <br>Tae Jin Park, He Huang, Ante Jukic, Kunal Dhawan, Krishna C Puvvada,<strong>Nithin Koluguri </strong> , Nikolay Karpov, Aleksandr Laptev, Jagadeesh Balam, Boris Ginsburg
-                <br>
-                <br>
-                <em>International Speech Communication Association (Interspeech), 2023</em>
-                <br>
-                <a href="https://github.com/NVIDIA/NeMo">project page</a>
-                <p></p>
-                <p> We propose a novel multi-scale decoder for speech recognition, which is an ensembled NeMo diarization system.</p>
-            </td>
+                Tae Jin Park, He Huang, Ante Jukic, Kunal Dhawan, Krishna C Puvvada,<strong>Nithin Koluguri </strong> , Nikolay Karpov, Aleksandr Laptev, Jagadeesh Balam, Boris Ginsburg
+                <br><em>International Speech Communication Association (Interspeech), 2023</em>
+                &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+             </td>
           </tr>
 
           <tr>
             <!-- <td width="25%">
               <div class="one"><img src='images/speakernet.png'></div>
             </td> -->
-            <td valign="top" width="75%">
+            <td valign="top" class="content-padding">
               <a href="https://arxiv.org/abs/2203.15974">
-                <papertitle>Multi-scale Speaker Diarization with Dynamic Scale Weighting</papertitle>
+                <span class="papertitle">Multi-scale Speaker Diarization with Dynamic Scale Weighting</span>
               </a>
-              <br>
               Taejin Park, <strong> Nithin Rao Koluguri</strong>, Jagadeesh Balam, Boris Ginsburg
-              <br>
-              <br>
-              <em>International Speech Communication Association (Interspeech), 2022 </em>
-              <br>
-              <a href="https://github.com/NVIDIA/NeMo">project page</a>
-              <p></p>
-              <p> Advanced multi-scale diarization system based on a multi-scale diarization decoder. </p>
-            </td>
+              <br><em>International Speech Communication Association (Interspeech), 2022 </em>
+              &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+             </td>
           </tr>
 
           <tr>
             <!-- <td width="25%">
               <div class="one"><img src='images/speakernet.png'></div>
             </td> -->
-            <td valign="top" width="75%">
+            <td valign="top" class="content-padding">
               <a href="https://arxiv.org/abs/2110.04410">
-                <papertitle>TitaNet: Neural Model for speaker representation with 1D Depth-wise separable convolutions and global context</papertitle>
+                <span class="papertitle">TitaNet: Neural Model for speaker representation with 1D Depth-wise separable convolutions and global context</span>
               </a>
-              <br>
-              <strong> Nithin Rao Koluguri</strong>,
-              Taejin Park, Boris Ginsburg
-              <br>
-              <br>
-              <em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2022</em>
-              <br>
-              <a href="https://github.com/NVIDIA/NeMo">project page</a>
-              <p></p>
-              <p>A novel neural network architecture for extracting speaker representations. Employs 1D depth-wise separable convolutions with Squeeze-and-Excitation (SE) layers with global context followed by channel attention based statistics pooling layer to map variable-length utterances to a fixed-length embedding (t-vector). </p>
-            </td>
+              <strong> Nithin Rao Koluguri</strong>, Taejin Park, Boris Ginsburg
+              <br><em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2022</em>
+              &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+             </td>
           </tr>
 
           <tr>
             <!-- <td width="25%">
               <div class="one"><img src='images/speakernet.png'></div>
             </td> -->
-            <td valign="top" width="75%">
+            <td valign="top" class="content-padding">
               <a href="https://arxiv.org/abs/2010.12653">
-                <papertitle>SpeakerNet: 1D Depth-wise Separable Convolutional Network for Text-Independent Speaker Recognition and Verification</papertitle>
+                <span class="papertitle">SpeakerNet: 1D Depth-wise Separable Convolutional Network for Text-Independent Speaker Recognition and Verification</span>
               </a>
-              <br>
-              <strong> Nithin Rao Koluguri</strong>,
-              Jason Li, Vitaly Lavrukhin, Boris Ginsburg
-              <br>
-              <br>
-              <em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2021</em>
-              <br>
-              <a href="https://github.com/NVIDIA/NeMo">project page</a>
-              <p></p>
-              <p>We propose SpeakerNet - a new neural architecture for speaker recognition and speaker verification tasks, this uses conv1D encoder and x-vector based statistics pooling decoder</p>
-            </td>
+              <strong> Nithin Rao Koluguri</strong>, Jason Li, Vitaly Lavrukhin, Boris Ginsburg
+              <br><em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2021</em>
+              &nbsp;/&nbsp;<a href="https://github.com/NVIDIA/NeMo">project page</a>
+             </td>
           </tr>
 
           <tr>
@@ -371,187 +479,101 @@
               <div class="one"><img src='images/proto_1.jpg'></div>
             </td>
              -->
-            <td valign="top" width="75%">
+            <td valign="top" class="content-padding">
               <a href="https://arxiv.org/abs/1910.11400">
-                <papertitle>Meta-learning for robust child-adult classification from speech</papertitle>
+                <span class="papertitle">Meta-learning for robust child-adult classification from speech</span>
               </a>
-              <br>
-              <strong> Nithin Rao Koluguri</strong>,
-              <a href="https://sail.usc.edu/~prabakar/">Manoj Kumar</a>,
-              So Hyun Kim, Catherine Lord,
-              <a href="https://sail.usc.edu/people/shri.php">Shrikanth Narayanan</a>
-              <br>
-              <br>
-              <em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2020</em>
-              <br>
-              <a href="https://github.com/usc-sail/care-proto-child-adult">project page</a>
-              <p></p>
-              <p>We demonstrate improvements over state-of-the-art speaker embeddings (x-vectors) for speaker classification using prototypical networks</p>
-            </td>
+              <strong> Nithin Rao Koluguri</strong>, <a href="https://sail.usc.edu/~prabakar/">Manoj Kumar</a>, So Hyun Kim, Catherine Lord, <a href="https://sail.usc.edu/people/shri.php">Shrikanth Narayanan</a>
+              <br><em>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2020</em>
+              &nbsp;/&nbsp;<a href="https://github.com/usc-sail/care-proto-child-adult">project page</a>
+             </td>
           </tr>
 
           <tr>
             <!-- <td width="25%">
               <div class="one"><img src='images/ALS.png'></div>
             </td> -->
-            <td valign="top" width="75%">
+            <td valign="top" class="content-padding">
               <a href="https://www.isca-speech.org/archive/Interspeech_2019/pdfs/1285.pdf">
-                <papertitle>Comparison Of Speech Tasks And Recording Devices For Voice Based Automatic Classification Of Healthy Subjects And Patients With Amyotrophic Lateral Sclerosis</papertitle>
+                <span class="papertitle">Comparison Of Speech Tasks And Recording Devices For Voice Based Automatic Classification Of Healthy Subjects And Patients With Amyotrophic Lateral Sclerosis</span>
               </a>
-              <br>
-              Suhas B.N,
-              Deep Patel,
-              <strong> Nithin Rao Koluguri</strong>,
-              <a href="http://www.ee.iisc.ac.in/new/people/faculty/prasantg/">Prasanta Ghosh</a>*
-              <br>
-              <br>
-              <em>International Speech Communication Association (Interspeech) </em>, 2019
-              <br>
-              <a href="http://spire.ee.iisc.ac.in/spire/allPublications.php">project page</a>
-              <p></p>
-              <p>We evaluated role of different speech tasks and recording devices in detecting ALS through speech</p>
-            </td>
+              Suhas B.N, Deep Patel, <strong> Nithin Rao Koluguri</strong>, <a href="http://www.ee.iisc.ac.in/new/people/faculty/prasantg/">Prasanta Ghosh</a>*
+              <br><em>International Speech Communication Association (Interspeech) </em>, 2019
+              &nbsp;/&nbsp;<a href="http://spire.ee.iisc.ac.in/spire/allPublications.php">project page</a>
+             </td>
           </tr>
 
           <tr>
             <!-- <td width="25%">
               <div class="one"><img src='images/MWSG.png' width="200" height="120"></div>
             </td> -->
-            <td valign="top" width="75%">
+            <td valign="top" class="content-padding">
               <a href="https://ieeexplore.ieee.org/abstract/document/7933047">
-                <papertitle>Spectrogram Enhancement Using Multiple Window Savitzky-Golay (MWSG) Filter for Robust Bird Sound Detection</papertitle>
+                <span class="papertitle">Spectrogram Enhancement Using Multiple Window Savitzky-Golay (MWSG) Filter for Robust Bird Sound Detection</span>
               </a>
-              <br>
-              <strong>Nithin Rao Koluguri</strong>,
-              <a href="http://www.ee.iisc.ac.in/new/people/students/phd/gnisha/index.html">Nisha G Meenakshi</a>*,
-              <a href="http://www.ee.iisc.ac.in/new/people/faculty/prasantg/">Prasanta Ghosh</a>*
-              <br>
-              <br>
-              <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, 2017
-              <br>
-              <a href="https://github.com/nithinraok/MWSG_IEEE_Paper">project page</a>
-              <p></p>
-              <p>We propose a novel unsupervised method to denoise a spectrogram using Multiple Window Savitzky Golay algorithm, and use to enhance bird sound ques to recognize their sounds in noisy environments</p>
-            </td>
+              <strong>Nithin Rao Koluguri</strong>, <a href="http://www.ee.iisc.ac.in/new/people/students/phd/gnisha/index.html">Nisha G Meenakshi</a>*, <a href="http://www.ee.iisc.ac.in/new/people/faculty/prasantg/">Prasanta Ghosh</a>*
+              <br><em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, 2017
+              &nbsp;/&nbsp;<a href="https://github.com/nithinraok/MWSG_IEEE_Paper">project page</a>
+             </td>
           </tr>
 
         </table>
 
-        <!-- Section for Adding Academic Reviewer. and list as 
-            \section{\textbf{ACADEMIC REVIEWER}}
- \textbf{Conferences:}
- \resumeItemListStart
-   \item 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
-   \item 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)
-   \item 2023 IEEE International Speech Communication Association (Interspeech)
-\resumeItemListEnd
-         -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <!-- Section for Adding Academic Reviewer. -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td>
-              <heading style="color:rgb(244, 189, 184);" >Academic Reviewer</heading>
+            <td class="content-padding">
+              <h2 class="heading">Academic Reviewer</h2>
             </td>
           </tr>
         </table>
-        <table width="100%" align="center" border="0" cellpadding="20">
+        <table width="100%" align="center" border="0" class="reviewer-list">
           <tr>
-            <td width="75%" valign="top">
+            <td width="100%" valign="top" class="content-padding">
               <p>
                 <strong>Conferences:</strong>
-                <br>
+              </p>
                 <ul>
+                  <li>2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</li>
+                  <li>2024 ISCA Computer Speech & Language (CSL)</li>
+                  <li>2024 IEEE Spoken Language Technology Workshop (SLT)</li>
+                  <li>2024 International Speech Communication Association (Interspeech)</li>
                   <li>2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</li>
                   <li>2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)</li>
                   <li>2023 IEEE International Speech Communication Association (Interspeech)</li>
                 </ul>
-              </p>
             </td>
           </tr>
         </table>
 
 
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td>
-              <heading style="color:rgb(244, 189, 184);" > Projects</heading>
+            <td class="content-padding">
+              <h2 class="heading">Blogs</h2>
             </td>
           </tr>
         </table>
-        <table width="100%" align="center" border="0" cellpadding="20">
-
-          <tr>
-            <!-- <td width="25%"><img src="images/sausage.jpg" width="200" height="120"></td> -->
-            <td width="75%" valign="top">
-              <p>
-                <a href="">
-                  <papertitle>Generating sausages from text using WFSTs without acoustic model (DR Project)</papertitle>
-                </a>
-    <br>
-		<strong>Nithin Rao Koluguri</strong>, <a href="">Prashanth G</a>, <a href="https://viterbi.usc.edu/directory/faculty/Georgiou/Panayiotis">Prof. Panayiotis Georgiou,</a>  2019 
-		<br>
-		<br> Developed a method to mimic an ASR for a given Noise type at certain db level to generate nbest paths from text alone using sausages and confusion matrix. Generated text can be used swiftly to improve an ASR correction model.<br>
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <!-- <td width="25%"><img src="images/VQA.png" width="200" height="160"></td> -->
-            <td width="75%" valign="top">
-              <p>
-                <a href="https://medium.com/@nithinraok_/visual-question-answering-attention-and-fusion-based-approaches-ebef62fa55aa">
-                  <papertitle>Visual Question Answering &#8208 Attention and Fusion based approaches</papertitle>
-                </a>
-                <br>
-		<strong>Nithin Rao Koluguri</strong>, <a href="https://github.com/digbose92">Digbalay Bose</a>,<a href=""> Namrata Tam</a>,  Aditya Mate 2019 
-                <br>
-                <br> Explored Visual Question Answering methods and looked at applying attention and fusion based methods specifically bottom-up and top-down. Explored BERT Embeddings and different representations for decent VQA system.
-                
-              </p>
-            </td>
-          </tr>
-
-	  <tr>
-            <!-- <td width="25%"><img src="images/kaldi.png" width="200" height="160"></td> -->
-            <td width="75%" valign="top">
-              <p>
-                <a href="https://github.com/nithinraok/Decision-level-data-fusion-of-Image-and-Speech-recognition-system">
-                  <papertitle>Image recognition system based on speech command</papertitle>
-                </a>
-                <br>
-		<strong>Nithin Rao Koluguri</strong>, Nikhil, Gaurav Newalkar, 2016 
-                <br>
-                  <br> Designed an image recognition system based on the input given through speech. The goal of the project is to assist visual-impaired persons to know the coordinates of the object they are looking for just by their speech. The system on overall achieved an accuracy of 93.75% on speech digits
-              </p>
-            </td>
-	  </tr> 
-        </table>
-
-	<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td>
-              <heading style="color:rgb(244, 189, 184);" >Blogs</heading>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" align="center" border="0" cellpadding="20">
+        <table width="100%" align="center" border="0" class="blog-list">
           <tr>
             <!-- <td width="25%"><img src="images/Blog.png" width="200" height="160"></td> -->
-            <td width="75%" valign="top">
+            <td width="100%" valign="top" class="content-padding">
               <p>
                 <a href="https://medium.com/@nithinraok_/decoding-an-audio-file-using-a-pre-trained-model-with-kaldi-c1d7d2fe3dc5">
-                  <papertitle>Decoding an audio file using a pre-trained model with Kaldi</papertitle>
+                  <span class="papertitle">Decoding an audio file using a pre-trained model with Kaldi</span>
                 </a>
 		</p>
 
 		<p>
                 <a href="https://medium.com/@nithinraok_/how-to-get-timestamps-of-an-audio-file-using-pre-trained-model-with-kaldi-7b279f59fcde">
-                  <papertitle>How to get timestamps of an audio file using pre-trained model with Kaldi</papertitle>
+                  <span class="papertitle">How to get timestamps of an audio file using pre-trained model with Kaldi</span>
                 </a>
               </p>
 
 		<p>
                 <a href="https://medium.com/@nithinraok_/visual-question-answering-attention-and-fusion-based-approaches-ebef62fa55aa">
-                  <papertitle>Visual Question Answering &#8208 Attention and Fusion based approaches</papertitle>
+                  <span class="papertitle">Visual Question Answering &#8208 Attention and Fusion based approaches</span>
                 </a>
               </p>
 
@@ -559,17 +581,19 @@
           </tr>
         </table>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tbody><tr><td>
+        <!-- Footer -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr><td class="content-padding">
           <br>
-            <p align="right"><font size="2">
+            <p class="footnote">
             <a href="http://www.cs.berkeley.edu/~barron/">inspired from this website</a>
-            </font></p>
+            </p>
           </td></tr></tbody>
         </table>
         </td>
     </tr>
   </table>
+
 </body>
 
 </html>
